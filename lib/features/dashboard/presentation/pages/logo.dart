@@ -20,7 +20,7 @@ class _LogoState extends State<Logo> {
     super.initState();
 
     Timer(const Duration(seconds: 5),
-        () => Navigator.pushNamed((context), AppRouts.hostHome));
+        () => Navigator.pushNamed((context), AppRouts.signIn));
   }
 
   @override
