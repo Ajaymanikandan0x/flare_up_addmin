@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flare_up_admin/core/themes/app_palette.dart';
 import 'package:flare_up_admin/core/themes/text_theme.dart';
+import 'package:flutter/material.dart';
 
 class AdminHomePage extends StatelessWidget {
   const AdminHomePage({super.key});
@@ -20,7 +20,7 @@ class AdminHomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'MeetMingle',
+                  'FlareUp',
                   style: AppTextStyles.primaryTextTheme(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -83,7 +83,8 @@ class AdminHomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                        icon: const Icon(Icons.search, color: AppPalette.darkText),
+                        icon: const Icon(Icons.search,
+                            color: AppPalette.darkText),
                         onPressed: () {},
                       ),
                       IconButton(
