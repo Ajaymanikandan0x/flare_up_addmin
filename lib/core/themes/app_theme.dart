@@ -8,7 +8,7 @@ class AppTheme {
         borderSide: BorderSide(color: color, width: 3),
       );
 
-  static final darkTheme = ThemeData.dark().copyWith(
+  static final theme = ThemeData.dark().copyWith(
     scaffoldBackgroundColor: AppPalette.darkBackground,
     cardColor: AppPalette.darkCard,
     textTheme: GoogleFonts.openSansTextTheme(ThemeData.dark().textTheme).apply(
@@ -17,25 +17,6 @@ class AppTheme {
     ),
     appBarTheme: const AppBarTheme(
       backgroundColor: AppPalette.darkBackground,
-      elevation: 0,
-    ),
-    inputDecorationTheme: InputDecorationTheme(
-      contentPadding: const EdgeInsets.all(20),
-      border: _border(),
-      focusedBorder: _border(AppPalette.gradient2),
-      errorBorder: _border(AppPalette.error),
-    ),
-  );
-
-  static final lightTheme = ThemeData.light().copyWith(
-    scaffoldBackgroundColor: AppPalette.lightBackground,
-    cardColor: AppPalette.lightCard,
-    textTheme: GoogleFonts.openSansTextTheme(ThemeData.light().textTheme).apply(
-      bodyColor: AppPalette.lightText,
-      displayColor: AppPalette.lightText,
-    ),
-    appBarTheme: const AppBarTheme(
-      backgroundColor: AppPalette.lightBackground,
       elevation: 0,
     ),
     inputDecorationTheme: InputDecorationTheme(

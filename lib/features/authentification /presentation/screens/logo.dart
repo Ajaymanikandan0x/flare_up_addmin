@@ -3,9 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../../../core/navigation/routes/routs.dart';
+
 import '../../../../core/widgets/logo_gradient.dart';
-
-
 
 class Logo extends StatefulWidget {
   const Logo({super.key});

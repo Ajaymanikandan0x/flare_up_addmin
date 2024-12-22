@@ -15,14 +15,6 @@ class AppPalette {
   static const Color darkHint = Color(0xFF747688);
   static const Color darkDivider = Color(0xFF2C2C2C);
 
-
-  static const Color lightBackground = Color(0xFFFFFFFF);
-  static const Color lightCard = Color(0xFFF5F5F5);
-  static const Color lightText = Color(0xFF1D2026);
-  static const Color lightTextSecondary = Color(0xFF666666);
-  static const Color lightHint = Color(0xFF747688);
-  static const Color lightDivider = Color(0xFFE0E0E0);
-
   static const Gradient primaryGradient = LinearGradient(
     colors: [gradient1, gradient2],
     begin: Alignment.topLeft,
@@ -36,8 +28,6 @@ class AppPalette {
   );
 
   // Shimmer Colors
-  static const Color shimmerDarkBase = Color(0xFF262626);
-  static const Color shimmerDarkHighlight = Color(0xFF3D3D3D);
-  static const Color shimmerLightBase = Color(0xFFE0E0E0);
-  static const Color shimmerLightHighlight = Color(0xFFF5F5F5);
+  static const Color shimmerBase = Color(0xFF262626);
+  static const Color shimmerHighlight = Color(0xFF3D3D3D);
 }

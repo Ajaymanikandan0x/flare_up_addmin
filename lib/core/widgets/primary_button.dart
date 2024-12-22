@@ -70,9 +70,7 @@ class PrimaryButton extends StatelessWidget {
                       if (iconData != null) ...[
                         Icon(
                           iconData,
-                          color: Theme.of(context).brightness == Brightness.dark
-                              ? AppPalette.darkCard
-                              : AppPalette.lightCard,
+                          color: AppPalette.darkCard,
                           size: responsiveFontSize,
                         ),
                         SizedBox(width: size.width * 0.02),

@@ -43,17 +43,14 @@ class _PasswordFieldState extends State<PasswordField> {
         prefixIcon: widget.icon != null
             ? Icon(
                 widget.icon!.icon,
-                color: theme.brightness == Brightness.dark
-                    ? AppPalette.darkHint
-                    : AppPalette.lightHint,
+                color: AppPalette.darkHint
+       
               )
             : null,
         suffixIcon: IconButton(
           icon: Icon(
             _obscureText ? Icons.visibility_off : Icons.visibility,
-            color: theme.brightness == Brightness.dark
-                ? AppPalette.darkHint
-                : AppPalette.lightHint,
+            color: AppPalette.darkHint,
           ),
           onPressed: () => setState(() => _obscureText = !_obscureText),
           tooltip: _obscureText ? 'Show password' : 'Hide password',
@@ -61,10 +58,8 @@ class _PasswordFieldState extends State<PasswordField> {
         border: InputBorder.none,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
-          borderSide: BorderSide(
-            color: theme.brightness == Brightness.dark
-                ? AppPalette.darkDivider
-                : Colors.grey.shade300,
+          borderSide: const BorderSide(
+            color: AppPalette.darkDivider,
           ),
         ),
         focusedBorder: OutlineInputBorder(

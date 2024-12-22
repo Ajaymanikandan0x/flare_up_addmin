@@ -7,34 +7,50 @@ class Responsive {
   static late double horizontalPadding;
   static late double verticalPadding;
   static late bool isDesktop;
+  static late bool isTablet;
+  static late bool isMobile;
 
   static void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context);
     screenWidth = _mediaQueryData.size.width;
     screenHeight = _mediaQueryData.size.height;
-    isDesktop = screenWidth > 1024;
-    horizontalPadding = isDesktop ? screenWidth * 0.1 : screenWidth * 0.05;
-    verticalPadding = isDesktop ? screenHeight * 0.05 : screenHeight * 0.02;
+    
+    // Define breakpoints
+    isDesktop = screenWidth >= 1024;
+    isTablet = screenWidth >= 768 && screenWidth < 1024;
+    isMobile = screenWidth < 768;
+    
+    // Adjust padding based on screen size
+    horizontalPadding = isDesktop 
+        ? screenWidth * 0.1 
+        : isTablet 
+            ? screenWidth * 0.08 
+            : screenWidth * 0.05;
+            
+    verticalPadding = isDesktop 
+        ? screenHeight * 0.05 
+        : isTablet 
+            ? screenHeight * 0.04 
+            : screenHeight * 0.03;
   }
 
+  // Utility getter for non-desktop screens
+  static bool get isSmallScreen => !isDesktop;
+
   // Font sizes
-  static double get titleFontSize => isDesktop ? 28.0 : 20.0;
-  static double get subtitleFontSize => isDesktop ? 20.0 : 16.0;
-  static double get bodyFontSize => isDesktop ? 18.0 : 14.0;
+  static double get titleFontSize => isDesktop ? 28 : isTablet ? 24 : 20;
+  static double get subtitleFontSize => isDesktop ? 20 : isTablet ? 18 : 16;
+  static double get bodyFontSize => isDesktop ? 16 : 14;
 
   // Spacing
-  static double get spacingHeight => isDesktop ? screenHeight * 0.03 : screenHeight * 0.025;
-  static double get buttonHeight => isDesktop ? 70.0 : 55.0;
+  static double get spacingHeight => screenHeight * (isDesktop ? 0.03 : 0.02);
+  static double get buttonHeight => isDesktop ? 56 : 48;
 
-  // Image sizes
-  static double get imageSize => isDesktop ? screenWidth * 0.15 : screenWidth * 0.2;
+  // Container dimensions
+  static double get sidebarWidth => isDesktop ? 250 : 200;
+  static double get topBarHeight => isDesktop ? 64 : 56;
+  static double get maxContentWidth => isDesktop ? 1200 : double.infinity;
 
   // Border radius
-  static double get borderRadius => isDesktop ? 16.0 : 8.0;
-
-  // Utility for detecting small screens
-  static bool get isSmallScreen => screenWidth <= 768;
-
-  // Container max width for centering content
-  static double get maxContainerWidth => isDesktop ? 800 : double.infinity;
+  static double get borderRadius => isDesktop ? 12 : 8;
 }
